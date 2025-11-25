@@ -1,14 +1,14 @@
-FROM ghcr.io/stefanuk12/ptero-debian-wine:dev
+FROM ghcr.io/parkervcp/yolks:wine_latest
 
 # Installing IW4M Admin Dependencies
 USER root
-RUN wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
+RUN wget https://packages.microsoft.com/config/debian/12/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 RUN dpkg -i packages-microsoft-prod.deb
 RUN rm packages-microsoft-prod.deb
 RUN apt-get update; \
     apt-get install -y apt-transport-https && \
     apt-get update && \
-    apt-get install -y dotnet-sdk-6.0 aspnetcore-runtime-6.0 dotnet-sdk-3.1 aspnetcore-runtime-3.1
+    apt-get install -y dotnet-sdk-8.0 aspnetcore-runtime-8.0 dotnet-sdk-3.1 aspnetcore-runtime-3.1
 
 # Installing other dependencies
 RUN apt-get install unzip
