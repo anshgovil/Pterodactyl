@@ -8,7 +8,8 @@ RUN rm packages-microsoft-prod.deb
 RUN apt-get update; \
     apt-get install -y apt-transport-https && \
     apt-get update && \
-    apt-get install -y dotnet-sdk-8.0 aspnetcore-runtime-8.0 dotnet-sdk-3.1 aspnetcore-runtime-3.1
+    apt-get install -y dotnet-sdk-8.0 aspnetcore-runtime-8.0 || \
+    apt-get install -y --fix-missing
 
 # Installing other dependencies
 RUN apt-get install unzip
