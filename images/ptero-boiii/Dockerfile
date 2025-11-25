@@ -1,4 +1,4 @@
-FROM ghcr.io/parkervcp/yolks:wine_latest
+FROM ghcr.io/anshgovil/ptero-debian-wine:latest
 
 # Installing IW4M Admin Dependencies
 USER root
